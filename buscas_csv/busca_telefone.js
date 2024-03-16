@@ -8,7 +8,8 @@ const regexTelefone = /\d+/g
 const regexTelefoneRefinado = /\(\d+\)/g
 //Pega o espaço \s e grupos de digitos \d+-
 const regexTelefoneEspaco = /\(\d+\)\s\d+-\d+/g
-
+//Busca somente os telefones de número celular usando matchTeleCelular = {2}
+const regexTelefoneCelular = /\(\d{2}\)\s\d{5}-\d{4}/g
 
 console.log('________________________Meta-char ou Metacaracteres________________________');
 const matchTelefone = banco.match(regexTelefone)
@@ -17,5 +18,6 @@ const matchTelefoneRefinado = banco.match(regexTelefoneRefinado)
 console.log('Telefone com parenteses:',matchTelefoneRefinado)
 const matchTelefoneEspaco = banco.match(regexTelefoneEspaco)
 console.log('Telefone com parenteses e espaços:', matchTelefoneEspaco)
-
+const matchTeleCelular = banco.match(regexTelefoneCelular)
+console.log('Celular com quantificadores:', matchTeleCelular)
 
